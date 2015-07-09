@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="expensesApp" class="ng-scope" lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title>Simple Expenses Tracker</title>
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="css/bootstrap-3.3.5-dist/css/bootstrap.min.css" />
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    	<!--[if lt IE 9]>
+    	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    	<![endif]-->
+		<link rel="stylesheet" href="css/simple-expenses-tracker/style.css" />
+	</head>
+	<body ng-controller="HomeViewController">
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="topnavbar">
+			<div class="container">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#jb-navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<div>
+						<a class="pull-left" href="#"><img src="img/logo.png" style="height:20px;width:20px;margin-top:14px;"/></a>
+						<a class="navbar-brand navbar-brand-fix" href="#" style="margin-left:2px;">{{appTitle}}</a>
+					</div>
+				</div><!--eof navbar-header-->
+			</div><!--eof container-->
+		</nav>
+		<!-- ngView: -->
+		<div class="container ng-scope" ng-view>
+			<div class="row ng-scope"></div>
+			<div class="row ng-scope"></div>
+		</div><!--eof container-->
+		<!-- Underscore -->
+		<script src="js/lib/underscore.js"></script>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<!-- Include all compiled plugins (below), or include individual files as needed -->		
+		<script src="js/lib/jquery.js"></script>		
+		<!-- Bootstrap -->
+		<script src="js/lib/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+		<!-- Angular -->
+		<script src="js/lib/angular-1.4.1/angular.min.js"></script>
+		<script src="js/lib/angular-1.4.1/angular-route.min.js"></script>
+		<script src="js/simple-expenses-tracker/main.js"></script>
+		<script><!-- FIX for navbar-fixed-top overlapping body -->
+			$(document).ready(function(){
+				$(document.body).css('padding-top', $('#topnavbar').height() + 10);
+				$(window).resize(function(){
+					$(document.body).css('padding-top', $('#topnavbar').height() + 10);
+				});
+			});
+		</script>	
+	</body>
+</html>

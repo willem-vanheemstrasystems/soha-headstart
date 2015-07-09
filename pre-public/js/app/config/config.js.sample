@@ -1,0 +1,13 @@
+/*
+ * Config
+ */
+define(['./Base'], function (Base) {
+    console.log('AngularJS-Headstart: config called');
+    var configs = {
+    app_list: {
+      // empty
+    }
+  };
+    var _Config = new Base(configs);
+    return _Config;
+});

@@ -1,8 +1,9 @@
-﻿<!DOCTYPE html ng-app="expensesApp" class="ng-scope" lang="en">
+﻿<!DOCTYPE html>
+<html ng-app="expensesApp" class="ng-scope" lang="en">
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html ng-app="expensesApp" class="no-js" lang="en"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -40,15 +41,11 @@
                     <p class="pageTitle">Welcome to Web App Common Tasks Test Page</p>
                     <p class="pageSubTitle">Dynamically load HTML, CSS based on Query String</p>
                 </div>
-
-				<p>START of Angular View</p>
 				<!-- ngView: -->
 				<div class="container ng-scope" ng-view>
 					<div class="row ng-scope"></div>
 					<div class="row ng-scope"></div>
 				</div><!--eof container-->
-				<p>END of Angular View</p>
-				
                 <div class="userActionSection">
                     <p class="pageSubTitle">The following link will load all HTML and CSS</p>
 	                <a class="pageSubTitleHint" href="?headerfooter=both&theme=green">Load Header, Footer and Green Theme (Two Column Layout)</a>

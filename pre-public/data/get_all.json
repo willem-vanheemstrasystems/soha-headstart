@@ -1,0 +1,8 @@
+[
+	{"id": 1, "description": "food", "amount": 10, "date": "2015-10-01"},
+	{"id": 2, "description": "tickets", "amount": 11, "date": "2015-10-02"},
+	{"id": 3, "description": "food", "amount": 12, "date": "2015-10-03"},
+	{"id": 4, "description": "phone credit", "amount": 13, "date": "2015-10-04"},
+	{"id": 5, "description": "bills", "amount": 14, "date": "2015-10-05"},
+	{"id": 6, "description": "food", "amount": 15, "date": "2015-10-06"}								
+]

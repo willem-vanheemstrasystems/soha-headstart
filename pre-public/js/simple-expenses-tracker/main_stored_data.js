@@ -168,9 +168,23 @@ app.factory('Expenses', ['$http', function($http){
 	service.remove = function(entry) {
 		// Reject will remove the element from the collection if its id matches the element's id provided
 		// Documentation for _.reject() http://underscorejs.org/#reject
-		service.entries = _.reject(service.entries, function(element) {
-			return element.id == entry.id;
-		});
+		$http({
+				withCredentials: false,
+				method: 'delete',
+				url: 'data/delete.json',
+				headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+				data: {'id': entry.id}
+			})
+			.success(function(data) {
+				if(data.success == 1) {
+					service.entries = _.reject(service.entries, function(element) {
+						return element.id == entry.id;
+					});
+				}
+			})
+			.error(function(data, status) {
+				alert('error when deleting an entry: data = ' + data + ', status = ' + status);
+			});
 	};
 	return service;
 }]);

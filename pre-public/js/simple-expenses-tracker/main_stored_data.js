@@ -129,20 +129,25 @@ app.factory('Expenses', ['$http', function($http){
 			// Update
 			// Extend will copy the properties of toUpdate into entry
 			// Documentation for _.extend() http://underscorejs.org/#extend
-			_.extend(toUpdate, entry);
+			$http({
+					withCredentials: false,
+					method: 'put',
+					url: 'data/update.json',
+					headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+					data: entry
+				})
+				.success(function(data) {
+					if(data.success == 1) {
+						_.extend(toUpdate, entry);
+					}
+				})
+				.error(function(data, status) {
+					alert('error when updating an entry: data = ' + data + ', status = ' + status);
+				});
 		}
 		else {
 			// Create
 			// Push the new entry to the cloud
-		/*	$http.post('data/create.json', entry)
-				.success(function(data){
-					entry.id = data.newId;
-					service.entries.push(entry);
-				})
-				.error(function(data, status){
-					alert('error when creating a new entry');
-				});
-		*/
 			$http({
 					withCredentials: false,
 					method: 'post',
